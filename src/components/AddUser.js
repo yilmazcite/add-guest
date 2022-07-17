@@ -18,7 +18,9 @@ const AddUser = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    //check if the name or age input is empty and update the 'error' state accordingly:
+    //check if the name or age input is empty and update the 'error' state accordingly.
+    //firstly check the if conditions and RETURN them if true.
+    //so that the rest of the code where the new guest info is stored will not be executed.
     if (newUserName.trim().length === 0 || newUserAge.trim().length === 0) {
       setError({
         title: "Invalid input",
