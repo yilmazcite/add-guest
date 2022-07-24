@@ -17,7 +17,11 @@ const AddUser = (props) => {
   };
 
   const ageChangeHandler = (event) => {
-    setNewUserAge(event.target.value);
+    let age = event.target.value;
+    return (
+      age.length < 4 ? setNewUserAge(age) : (age = age.slice(0, 3)),
+      setNewUserAge(age)
+    );
   };
 
   const submitHandler = (event) => {
