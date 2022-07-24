@@ -9,7 +9,11 @@ const AddUser = (props) => {
   const [error, setError] = useState(); //initial state value is 'undefined'
 
   const nameChangeHandler = (event) => {
-    setNewUserName(event.target.value);
+    let name = event.target.value;
+    return (
+      name.length < 30 ? setNewUserName(name) : (name = name.slice(0, 30)),
+      setNewUserName(name)
+    );
   };
 
   const ageChangeHandler = (event) => {
